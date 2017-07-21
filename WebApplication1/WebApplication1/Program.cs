@@ -16,6 +16,7 @@ namespace WebApplication1
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseUrls("http://*:5000")
                 .UseApplicationInsights()
                 .Build();
 
