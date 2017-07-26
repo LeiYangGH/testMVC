@@ -16,6 +16,8 @@ namespace WebApplication1
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -28,9 +30,17 @@ namespace WebApplication1
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello World!");
+            //});
+
+            app.UseMvc(routes =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                routes.MapRoute(
+                    name: "default",
+                    //template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=HelloWorld}/{action=Index}");
             });
         }
     }
