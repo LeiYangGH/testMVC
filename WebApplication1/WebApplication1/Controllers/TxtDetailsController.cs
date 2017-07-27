@@ -14,12 +14,10 @@ namespace WebApplication1.Controllers
         {
             _env = env;
         }
-        //public IActionResult Open()
-        //{
-        //    return View();
-        //}
+
         public IActionResult Details(string fn)
         {
+            ViewData["content"] = System.IO.File.ReadAllText(fn);
             return View();
         }
     }
