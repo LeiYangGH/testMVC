@@ -5,12 +5,15 @@
 <ul>
     @for (int i = 0; i < ((TxtFile[])ViewData["lstTxtFiles"]).Length; i++)
     {
-        <li>@Html.ActionLink(
+        <li>
+            @Html.ActionLink(
     ((TxtFile[])ViewData["lstTxtFiles"])[i].FileName,
     "Details",
     "TxtDetails",
-    new { fn=((TxtFile[])ViewData["lstTxtFiles"])[i].FullName}
-    )</li>
+    new { fn = ((TxtFile[])ViewData["lstTxtFiles"])[i].FullName },
+    new { title = ((TxtFile[])ViewData["lstTxtFiles"])[i].FullName }
+    )
+    </li>
     }
 </ul>
 <p></p>
