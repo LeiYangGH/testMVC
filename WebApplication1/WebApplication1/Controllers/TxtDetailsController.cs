@@ -17,6 +17,7 @@ namespace WebApplication1.Controllers
 
         public IActionResult Details(string fn)
         {
+            ViewData["fn"] = fn;
             ViewData["content"] = System.IO.File.ReadAllText(fn);
             return View();
         }
