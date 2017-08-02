@@ -24,12 +24,12 @@ namespace WebApplication1
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole();
+            app.UseStaticFiles();
 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseStaticFiles();
             //app.Run(async (context) =>
             //{
             //    await context.Response.WriteAsync("Hello World!");
@@ -42,6 +42,7 @@ namespace WebApplication1
                     //template: "{controller=Home}/{action=Index}/{id?}");
                     template: "{controller=HelloWorld}/{action=Index}");
             });
+
         }
     }
 }

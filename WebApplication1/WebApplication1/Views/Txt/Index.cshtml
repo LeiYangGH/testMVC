@@ -42,14 +42,25 @@
     "Index",
     "HelloWorld"
     )
-
-@section scripts {
-    @*<script type="text/javascript">alert('hello');</script>*@
+<script type="text/javascript" src="~/js/external/jquery/jquery.js"></script>
+<script type="text/javascript" src="~/js/jquery-ui.js"></script>
 <script type="text/javascript">
-    //alert('hello');
+        //alert('hello');
         $(document).ready(function () {
+
             $("#tabs").tabs();
 </script>
-}
+
+
+
+@*@section scripts {
+    <script type="text/javascript">alert('hello');</script>
+    <script type="text/javascript">
+        //alert('hello');
+        $(document).ready(function () {
+                
+                $("#tabs").tabs();
+    </script>
+}*@
 
 
