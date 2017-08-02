@@ -1,16 +1,15 @@
-
+@using WebApplication1.Data;
 @{
     ViewData["Title"] = "Txt Index";
 }
 <ul>
-    @for (int i = 0; i < ((string[])ViewData["lstFileNames"]).Length; i++)
+    @for (int i = 0; i < ((TxtFile[])ViewData["lstTxtFiles"]).Length; i++)
     {
-        @*<li>@(((string[])ViewData["lstFileNames"])[i])</li>*@
         <li>@Html.ActionLink(
-    ((string[])ViewData["lstFileNames"])[i],
+    ((TxtFile[])ViewData["lstTxtFiles"])[i].FileName,
     "Details",
     "TxtDetails",
-    new { fn=((string[])ViewData["lstFileNames"])[i]}
+    new { fn=((TxtFile[])ViewData["lstTxtFiles"])[i].FullName}
     )</li>
     }
 </ul>

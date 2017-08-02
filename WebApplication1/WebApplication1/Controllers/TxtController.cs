@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
-
+using WebApplication1.Data;
 namespace WebApplication1.Controllers
 {
     public class TxtController : Controller
@@ -18,9 +18,8 @@ namespace WebApplication1.Controllers
         public IActionResult Index()
         {
             var webRoot = _env.WebRootPath;
-            //string dir = Server.MapPath(@"~/Data");
-            string dir = Path.Combine(webRoot, @"../Data");
-            ViewData["lstFileNames"] = Directory.GetFiles(dir);
+            string dir = Path.Combine(webRoot,"../");
+            ViewData["lstTxtFiles"] = Directory.GetFiles(dir,"*.json").Select(x => new TxtFile(x)).ToArray();
             return View();
         }
     }
