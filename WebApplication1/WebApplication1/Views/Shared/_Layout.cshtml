@@ -33,7 +33,7 @@
 </head>
 
 <body>
- 
+
 
     <div class="container body-content">
         @RenderBody()
@@ -45,7 +45,7 @@
         </footer>
     </div>
 
- 
+
 
 
     @RenderSection("scripts", required: false)
@@ -53,7 +53,9 @@
     <script type="text/javascript" src="~/js/external/jquery/jquery.js"></script>
     <script type="text/javascript" src="~/js/jquery-ui.js"></script>
     <script>
-    $("#tabs").tabs();
+        $(document).ready(function () {
+            $("#tabs").tabs();
+        });
     </script>
 
 
