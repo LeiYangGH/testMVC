@@ -3,18 +3,18 @@
     ViewData["Title"] = "Txt Index";
 }
 
-
+@{TxtFile[] files = (TxtFile[])ViewData["lstTxtFiles"];}
 
 <ul>
-    @for (int i = 0; i < ((TxtFile[])ViewData["lstTxtFiles"]).Length; i++)
+    @foreach (TxtFile f in files)
     {
         <li>
             @Html.ActionLink(
-    ((TxtFile[])ViewData["lstTxtFiles"])[i].FileName,
+    f.FileName,
     "Details",
     "TxtDetails",
-    new { fn = ((TxtFile[])ViewData["lstTxtFiles"])[i].FullName },
-    new { title = ((TxtFile[])ViewData["lstTxtFiles"])[i].FullName }
+    new { fn = f.FullName },
+    new { title = f.FullName }
     )
         </li>
     }
@@ -25,14 +25,14 @@
 
 
     <ul>
-        @for (int i = 0; i < ((TxtFile[])ViewData["lstTxtFiles"]).Length; i++)
+        @foreach (TxtFile f in files)
         {
-            <li><a href='@string.Format("#{0}",((TxtFile[])ViewData["lstTxtFiles"])[i].FileName)'>@(((TxtFile[])ViewData["lstTxtFiles"])[i].FileName)</a></li>
+            <li><a href='@string.Format("#{0}",f.FileName)'>@(f.FileName)</a></li>
         }
     </ul>
-    @for (int i = 0; i < ((TxtFile[])ViewData["lstTxtFiles"]).Length; i++)
+    @foreach (TxtFile f in files)
     {
-        <div id='@(((TxtFile[])ViewData["lstTxtFiles"])[i].FileName)'>@(((TxtFile[])ViewData["lstTxtFiles"])[i].Content)</div>
+        <div id='@(f.FileName)'>@(f.Content)</div>
     }
 </div>
 
