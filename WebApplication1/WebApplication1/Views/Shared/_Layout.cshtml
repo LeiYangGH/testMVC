@@ -1,4 +1,4 @@
-﻿
+
 @inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
 <!DOCTYPE html>
 <html>
@@ -34,8 +34,6 @@
 
 <body>
     <div id="tabs">
-
-
         <ul>
             <li><a href="#tabs-1">First</a></li>
             <li><a href="#tabs-2">Second</a></li>
@@ -67,12 +65,10 @@
 
     <script type="text/javascript" src="~/js/external/jquery/jquery.js"></script>
     <script type="text/javascript" src="~/js/jquery-ui.js"></script>
-    <script type="text/javascript">
-        //alert('hello');
-        $(document).ready(function () {
-
-            $("#tabs").tabs();
+    <script>
+    $("#tabs").tabs();
     </script>
+
 
 </body>
 </html>
