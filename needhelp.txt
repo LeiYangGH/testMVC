@@ -1,0 +1,8 @@
+我是在学asp.net mvc，现在用的.net core版本，在windows和linux都可以部署，但当前只用到了最简单的页面跳转，遍历本地的文件和内容。
+源码在github:
+https://github.com/LeiYangGH/testMVC
+
+现想通过jquery的tab（具体是在jquery的官网http://jqueryui.com/download/勾选tab示例下载的,且已经把需要的最简单的部分html示例页面放在了源码管理中），
+我的想法是既然jqeury只需要少数几个css和js文件，就可以嵌入html网页运行，没有其他依赖，那么我嵌入到asp.net mvc中也应该是类似方法，现在结果是运行网页的时候发现html里已经嵌入了相应的css和javascript，但就是没效果。不知道如何调试。
+
+如果有人能解决可以付rmb 30元。验收方式为发运行效果图或者部署在公网上让我测试也可以，然后付款，最后发源码。
