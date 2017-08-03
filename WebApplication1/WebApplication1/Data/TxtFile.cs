@@ -11,8 +11,10 @@ namespace WebApplication1.Data
         {
             this.FullName = fullName;
             this.FileName = System.IO.Path.GetFileNameWithoutExtension(fullName);
+            this.Content = System.IO.File.ReadAllText(fullName);
         }
         public string FileName { get; set; }
         public string FullName { get; set; }
+        public string Content { get; set; }
     }
 }
